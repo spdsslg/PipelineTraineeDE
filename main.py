@@ -3,9 +3,13 @@ import loader
 import processing
 
 if __name__ == '__main__':
-    rooms_path = input()
-    students_path = input()
-    format = input()
+    rooms_path = input('Rooms file path: ')
+    students_path = input('Students file path: ')
+    format = input('Out data format: ')
+    while not (format == 'json' or format == 'xml'):
+        print("Incorrect format, try again!")
+        format = input('Out data format: ')
+
 
     db_manager = DBManager()
 

@@ -46,6 +46,22 @@ class DBManager():
         
         postgres_conn.close()
 
+    def create_index(self):
+        """
+        Creates index on the primary key in student table on column room_id, 
+        which is the FK column. Should optimise JOIN performance. 
+        """
+
+        sql_room_id_index = """
+        CREATE INDEX IF NOT EXISTS idx_fk_room_id
+        ON student(room_id)
+        """
+
+        with self.conn.transaction():
+            with self.conn.cursor() as cur:
+                cur.execute(sql_room_id_index)
+                print("Index on room_id FK in student table was created/already exists")
+
     def _create_tables(self):
         student_create = """ 
         CREATE TABLE IF NOT EXISTS student (

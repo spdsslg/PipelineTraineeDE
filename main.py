@@ -10,6 +10,7 @@ if __name__ == '__main__':
     db_manager = DBManager()
 
     loader.load(db_manager, rooms_path, students_path)
+    db_manager.create_index()
     
     processing.process(db_manager, format)
 

@@ -13,5 +13,7 @@ if __name__ == '__main__':
     
     processing.process(db_manager, format)
 
+    print('Out files are successfully created')
+
 
     

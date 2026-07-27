@@ -1,5 +1,6 @@
 from manager import DBManager
 import loader
+import processing
 
 if __name__ == '__main__':
     rooms_path = input()
@@ -10,5 +11,7 @@ if __name__ == '__main__':
 
     loader.load(db_manager, rooms_path, students_path)
     
+    processing.process(db_manager, format)
+
 
     

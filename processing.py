@@ -115,7 +115,7 @@ def save_to_xml(data: str, query_num: int):
 
                 for key,val in item.items():
                     child = etree.SubElement(elem, key)
-                    child.text = str(val) if not None else ""
+                    child.text = str(val)
                 
                 xf.write(elem, pretty_print=True)
 
